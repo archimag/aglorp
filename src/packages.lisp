@@ -8,4 +8,20 @@
 
 (defpackage #:aglorp
   (:use #:cl #:iter)
-  (:export #:class-sql-table))
+  (:export #:*storage*
+           ;;
+           #:storage-persist-object
+           #:storage-read-objects
+           #:storage-one-object
+           #:storage-count-objects
+           #:storage-object-id
+           #:call-with-storage
+           ;;
+           #:with-storage
+           #:persist-object
+           #:read-objects
+           #:one-object
+           #:count-objects
+           #:oid
+           ;;
+           #:class-sql-table))
