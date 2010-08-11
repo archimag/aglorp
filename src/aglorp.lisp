@@ -47,8 +47,10 @@
 (defun count-objects (class)
   (storage-count-objects *storage* class))
 
-(defun one-object (class &key &allow-other-keys)
-  (storage-one-object *storage* class))
+(defun one-object (class &rest rest &key &allow-other-keys)
+  ;;(storage-one-object *storage* class))
+  (apply #'storage-one-object *storage* class rest))
+
 
 (defun oid (object)
   (storage-object-id *storage* object))
